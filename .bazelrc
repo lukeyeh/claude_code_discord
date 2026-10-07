@@ -1,0 +1,24 @@
+build --cxxopt=-std=c++20
+build --host_cxxopt=-std=c++20
+
+# Nothing here throws: failures travel as absl::Status.
+build --cxxopt=-fno-exceptions
+# Clang still suggests that coroutine types declare a handler for exceptions
+# in case the code is ever built with them enabled. It will not be.
+build --cxxopt=-Wno-coroutine-missing-unhandled-exception
+
+# Header-parsing actions have no source file, which crashes the
+# compile_commands.json generator.
+build --features=-parse_headers
+build --host_features=-parse_headers
+
+# Link this repository's own libraries into each binary statically. Left to
+# itself Bazel builds them as shared libraries for tests, and a shared library
+# cannot contain the static libraries from Nix that it depends on.
+build --dynamic_mode=off
+
+test --test_output=errors
+
+# `bazel test --config=epoll //...` runs every test on the epoll I/O backend
+# instead of the default, which is io_uring where the system allows it.
+test:epoll --test_arg=--io_backend=epoll

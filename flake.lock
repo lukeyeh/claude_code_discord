@@ -1,0 +1,61 @@
+{
+  "nodes": {
+    "bedrock": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1791419587,
+        "narHash": "sha256-aJ4oK5jJEJRnQPfrJd0620MxdqZsBNNyqkQh335Vx78=",
+        "owner": "lukeyeh",
+        "repo": "bedrock",
+        "rev": "2810b0c88726c8ad779380006b775d6c5f6dd850",
+        "type": "github"
+      },
+      "original": {
+        "owner": "lukeyeh",
+        "repo": "bedrock",
+        "type": "github"
+      }
+    },
+    "claude_code_co": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1791418139,
+        "narHash": "sha256-nIIDf8dRjyvUptbaishe/S+rIe1pL/WAWVTBnHohSG0=",
+        "owner": "lukeyeh",
+        "repo": "claude_code_co",
+        "rev": "cce00fa99f58660f777179bca16d028605a6d7a8",
+        "type": "github"
+      },
+      "original": {
+        "owner": "lukeyeh",
+        "repo": "claude_code_co",
+        "type": "github"
+      }
+    },
+    "nixpkgs": {
+      "locked": {
+        "lastModified": 1791260994,
+        "narHash": "sha256-Miqqk/ammqnTUxaoCyvtwoPeLbI1ksFyLxi/CazZpWY=",
+        "owner": "nixos",
+        "repo": "nixpkgs",
+        "rev": "151fa4e8ddfdd8dd25d945ad94ed54a13de9f6e4",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nixos",
+        "ref": "nixos-unstable",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
+    "root": {
+      "inputs": {
+        "bedrock": "bedrock",
+        "claude_code_co": "claude_code_co",
+        "nixpkgs": "nixpkgs"
+      }
+    }
+  },
+  "root": "root",
+  "version": 7
+}
